@@ -1,0 +1,17 @@
+1. Create a new folder
+2. Create a virtual environment inside the folder
+    => python -m venv venv
+
+3. Activate the environment
+    => venv\Scripts\activate
+
+4. Install Django in the environment
+    => pip install django
+
+5. Start a django project
+    => django-admin startproject <project_name>
+
+6. Open this newly created project folder in pycharm
+   (Not the previously created folder)
+
+7. Move the 'venv' folder inside the project folder
