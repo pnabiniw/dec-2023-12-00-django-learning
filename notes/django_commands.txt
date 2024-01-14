@@ -1,2 +1,7 @@
 1. django-admin startproject <project_name>
+    => Creates a new django project
 2. python manage.py runserver
+    => Starts a local server to host django project
+3. python manage.py startapp <app_name>
+    => Creates a new app in django project
+

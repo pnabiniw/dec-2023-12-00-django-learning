@@ -1,1 +1,2 @@
 10. Django Project Setup (Jan 12)
+11. Template Rendering (Jan 14)
