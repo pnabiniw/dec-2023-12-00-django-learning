@@ -2,6 +2,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
+def root_page(request):
+    return render(request, template_name="myapp/root_page.html")
+
+
 def home(request):
     html = """
     <html>
@@ -23,3 +27,7 @@ def home(request):
 
 def template_home(request):
     return render(request, template_name="myapp/home.html")
+
+
+def portfolio(request):
+    return render(request, template_name="myapp/index.html")
