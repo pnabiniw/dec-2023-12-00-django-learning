@@ -1,2 +1,4 @@
 10. Django Project Setup (Jan 12)
 11. Template Rendering (Jan 14)
+12. Static Load (Jan 16)
+13. Template inheritance and context (Jan 17)
