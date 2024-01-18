@@ -15,3 +15,11 @@
    (Not the previously created folder)
 
 7. Move the 'venv' folder inside the project folder
+
+# Django works with MVT architecture.
+# MVT stands for Model, View and Template
+# Model is the place where we define our database tables
+# View is the place where we write function/classes (logical codes)
+# Template is place where we write our html code.
+
+# Unlike Django, Laravel (PHP framework) works in MVC architecture

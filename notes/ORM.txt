@@ -1,0 +1,37 @@
+1. ORM stands for Object Relational Mapping
+2. It is the way to query the database by writing python code rather than SQL queries
+
+Raw Query to create data in the table
+=> Insert into Student (ID, Name, Age, Email, Address) values (1, "jOn", 30, "nnds@df.com", "KTM")
+
+Equivalent ORM
+=> Student.objects.create(name="Jon", age=30, email="j@email.com", address="KTM")
+
+
+CRUD ORMs
+
+Create
+1. Student.objects.create(name="Jon", age=30, email="j@email.com", address="KTM")
+
+
+Read
+2. Student.objects.filter(name="Jane")
+3. Student.objects.get(name="Jane")
+    => There can be possible errors while using get()
+
+    DoexNotExists
+    => Student.objects.get(id=100): If there is no data with id 100 then it raises error
+
+    MultipleObjectsReturned
+    => Student.objects.get(age=30): If age 30 data is two or more than two then it also raises error
+
+
+
+4. Student.objects.all()
+
+
+Update
+5. Student.objects.filter(id=2).update(name="Hary")
+
+Delete
+6. Student.objects.filter(id=2).delete()

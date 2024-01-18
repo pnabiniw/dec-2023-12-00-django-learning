@@ -5,3 +5,7 @@
 3. python manage.py startapp <app_name>
     => Creates a new app in django project
 
+4. python manage.py makemigrations
+    => Creates migrations
+5. python manage.py migrate
+    => Migrate the migrations and create table in the database

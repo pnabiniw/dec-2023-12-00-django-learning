@@ -2,3 +2,4 @@
 11. Template Rendering (Jan 14)
 12. Static Load (Jan 16)
 13. Template inheritance and context (Jan 17)
+14. Django Models (Jan 18)
