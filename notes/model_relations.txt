@@ -1,0 +1,17 @@
+There are three types of model relations
+1. One-Many Relation
+2. One-One Relation
+3. Many-Many Relation
+
+
+
+1. One-Many:
+   If you have to group the items/entities under certain group then One-Many relationship is maintained
+   E.g. Food Category and Food Menu, Classroom and Student,  Height and Person
+
+2. One-One:
+    If you have to make one on one relationship between entities then One-One relation is maintained.
+    E.g. User and UserProfile
+
+3. Many-Many
+    E.g. User and User Role in a system
