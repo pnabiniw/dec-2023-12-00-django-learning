@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+    <h1>{{ title }}</h1>
+
+    <form method="post" action="{% url 'crud_student' %}">
+        {% csrf_token %}
+        Name:<br>
+        <input class="form form-control" name="name" style="width: 400px"><br>
+
+        Email:<br>
+        <input class="form form-control" name="email" style="width: 400px"><br>
+
+        Age:<br>
+        <input class="form form-control" name="age" style="width: 400px"><br>
+
+        Address:<br>
+        <input class="form form-control" name="address" style="width: 400px"><br>
+
+        <div class="form-group col-md-4">
+            <label for="inputState">Classroom</label>
+            <select id="inputState" class="form-control" name="classroom">
+                <option value="2">-------</option>
+                {% for classroom in classrooms %}
+                    <option value="{{ classroom.id }}">{{ classroom.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+
+        <button type="submit">Submit</button>
+        <br>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+            <th scope="col">Address</th>
+            <th scope="col">Classroom</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ student.name }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.address }}</td>
+                <td>{{ student.classroom.name }}</td>
+                <td>
+                    <a href="#">Update</a>
+                    <a href="{% url 'delete_student' student.id %}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
