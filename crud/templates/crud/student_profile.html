@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1>Student Profile</h1><br>
+    <form method="post" action="{% url 'student_profile' %}">
+        {% csrf_token %}
+        <div class="form-group col-md-4">
+            <label for="inputState">Student</label>
+            <select id="inputState" class="form-control" name="student">
+                <option value="2">-------</option>
+                {% for student in students %}
+                    <option value="{{ student.id }}">{{ student.name }}</option>
+                {% endfor %}
+            </select>
+        </div><br>
+
+        Phone Number:<br>
+        <input class="form form-control" name="phone" style="width: 400px"><br>
+
+        Roll Number:<br>
+        <input class="form form-control" name="roll" style="width: 400px"><br>
+
+        <button type="submit">Submit</button>
+        <br>
+    </form><br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Student</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Roll Number</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for profile in profiles %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ profile.student.name }}</td>
+                <td>{{ profile.phone }}</td>
+                <td>{{ profile.roll_no }}</td>
+                <td>
+                    <a href="#">Detail</a>
+                    <a href="#">Update</a>
+                    <a href="#">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

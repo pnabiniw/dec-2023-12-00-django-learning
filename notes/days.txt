@@ -4,3 +4,5 @@
 13. Template inheritance and context (Jan 17)
 14. Django Models (Jan 18)
 15. Model Relations (Jan 19)
+16. Student CRUD (Jan 21)
+17. Student Update (Jan 22)

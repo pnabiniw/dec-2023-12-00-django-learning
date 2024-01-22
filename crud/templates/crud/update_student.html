@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1>Update Student</h1><br>
+    <form method="post" action="{% url 'update_student' student.id %}">
+        {% csrf_token %}
+        Name:<br>
+        <input value="{{ student.name }}" class="form form-control" name="name" style="width: 400px"><br>
+
+        Email:<br>
+        <input value="{{ student.email }}" class="form form-control" name="email" style="width: 400px"><br>
+
+        Age:<br>
+        <input value="{{ student.age }}" class="form form-control" name="age" style="width: 400px"><br>
+
+        Address:<br>
+        <input value="{{ student.address }}" class="form form-control" name="address" style="width: 400px"><br>
+
+        <div class="form-group col-md-4">
+            <label for="inputState">Classroom</label>
+            <select id="inputState" class="form-control" name="classroom">
+                {% for classroom in classrooms %}
+                    {% if classroom.id == student.classroom.id %}
+                        <option selected value="{{ classroom.id }}">{{ classroom.name }}</option>
+                    {% else %}
+                        <option value="{{ classroom.id }}">{{ classroom.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+
+        <button type="submit">Submit</button>
+        <br>
+    </form>
+{% endblock %}

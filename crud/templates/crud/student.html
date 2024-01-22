@@ -55,7 +55,7 @@
                 <td>{{ student.address }}</td>
                 <td>{{ student.classroom.name }}</td>
                 <td>
-                    <a href="#">Update</a>
+                    <a href="{% url 'update_student' student.id %}">Update</a>
                     <a href="{% url 'delete_student' student.id %}">Delete</a>
                 </td>
             </tr>
