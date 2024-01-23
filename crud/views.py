@@ -65,9 +65,29 @@ def student_profile(request):
         student_id = request.POST.get("student")
         roll = request.POST.get("roll")
         phone = request.POST.get("phone")
-        StudentProfile.objects.create(student_id=student_id, roll_no=roll, phone=phone)
+        pp = request.FILES.get('pp')
+        sp = StudentProfile.objects.create(student_id=student_id, roll_no=roll, phone=phone)
+        print(pp)
+        if pp:
+            sp.profile_picture = pp
+            sp.save()
         return redirect("student_profile")
     profiles = StudentProfile.objects.all()
     students = Student.objects.all()
     return render(request, template_name="crud/student_profile.html",
                   context={"profiles": profiles, "students": students, "profile_active": "active"})
+
+
+def update_profile(request, id):
+    profile = StudentProfile.objects.get(id=id)
+    if request.method == "POST":
+        phone = request.POST.get("phone")
+        roll = request.POST.get("roll")
+        StudentProfile.objects.filter(id=id).update(phone=phone, roll_no=roll)
+        return redirect('student_profile')
+    return render(request, template_name="crud/update_profile.html", context={"profile": profile})
+
+
+def detail_profile(request, id):
+    profile = StudentProfile.objects.get(id=id)
+    return render(request, template_name='crud/detail_profile.html', context={'profile': profile})

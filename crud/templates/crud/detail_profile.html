@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Student Detail</h1>
+
+    {% if profile.profile_picture %}
+        <img src="{{ profile.profile_picture.url }}" alt="pp" style="height: 200px; width: 200px">
+    {% else %}
+        <img src="{% static 'crud/img/default.png' %}" alt="pp" style="height: 200px; width: 200px">
+    {% endif %}
+    <br>
+    <b>Name:</b>{{ profile.student.name }}<br>
+    <b>Email:</b>{{ profile.student.email }}<br>
+    <b>Age:</b>{{ profile.student.age }}<br>
+    <b>Address:</b>{{ profile.student.address }}<br>
+    <b>Phone:</b>{{ profile.phone }}<br>
+    <b>Roll Number:</b>{{ profile.roll_no }}<br>
+{% endblock %}

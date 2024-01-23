@@ -1,0 +1,10 @@
+1. Create a new django project
+2. Start an app 'crud'
+3. Create a model Student in the crud app with fields
+    - Name
+    - Email
+    - Age
+    - Address
+    - Profile Picture
+4. Create a table to list all the students and a form to add a student
+5. Create detail, delete and update of the student

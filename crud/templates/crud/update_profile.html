@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+    <h1>Update Profile</h1>
+
+    <form method="post" action="{% url 'update_profile' profile.id %}">
+        {% csrf_token %}
+        <div class="form-group col-md-4">
+            <label for="inputState">Student</label>
+            <select id="inputState" class="form-control" name="student" disabled>
+                <option selected>{{ profile.student.name }}</option>
+            </select>
+        </div><br>
+
+        Phone Number:<br>
+        <input value="{{ profile.phone }}" class="form form-control" name="phone" style="width: 400px"><br>
+
+        Roll Number:<br>
+        <input value="{{ profile.roll_no }}" class="form form-control" name="roll" style="width: 400px"><br>
+
+        <button type="submit">Submit</button>
+        <br>
+    </form><br>
+{% endblock %}

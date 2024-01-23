@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Student Profile</h1><br>
-    <form method="post" action="{% url 'student_profile' %}">
+    <form method="post" action="{% url 'student_profile' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group col-md-4">
             <label for="inputState">Student</label>
@@ -19,6 +19,9 @@
 
         Roll Number:<br>
         <input class="form form-control" name="roll" style="width: 400px"><br>
+
+        Profile Picture:<br>
+        <input type="file" class="form form-control" name="pp" style="width: 400px"><br>
 
         <button type="submit">Submit</button>
         <br>
@@ -41,8 +44,8 @@
                 <td>{{ profile.phone }}</td>
                 <td>{{ profile.roll_no }}</td>
                 <td>
-                    <a href="#">Detail</a>
-                    <a href="#">Update</a>
+                    <a href="{% url 'detail_profile' profile.id %}">Detail</a>
+                    <a href="{% url 'update_profile' profile.id %}">Update</a>
                     <a href="#">Delete</a>
                 </td>
             </tr>
