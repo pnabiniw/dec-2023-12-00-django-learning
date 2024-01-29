@@ -6,3 +6,6 @@
 15. Model Relations (Jan 19)
 16. Student CRUD (Jan 21)
 17. Student Update (Jan 22)
+18. Profile Create and Update (Jan 23)
+19. Login and Signup (Jan 24)
+20.

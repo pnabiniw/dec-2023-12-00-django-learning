@@ -1,0 +1,29 @@
+{% extends 'classbased/base.html' %}
+
+
+{% block content %}
+<h1>ClassRoom</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for classroom in classrooms %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ classroom.id }}</td>
+            <td>{{ classroom.name }}</td>
+            <td>
+                <a href="#">Update</a>
+                <a href="#">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

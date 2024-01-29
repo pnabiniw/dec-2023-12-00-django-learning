@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 
-@login_required
+# @login_required
 def root_page(request):
     return render(request, template_name="myapp/root_page.html")
 
