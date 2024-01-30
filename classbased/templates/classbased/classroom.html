@@ -2,7 +2,12 @@
 
 
 {% block content %}
-<h1>ClassRoom</h1>
+<h1>ClassRoom</h1><br>
+    <form method="post" action="{% url 'classbased_classroom' %}">
+        {% csrf_token %}
+        {{ form }}<br>
+        <button type="submit">Submit</button><br>
+    </form>
 <table class="table table-striped">
     <thead>
     <tr>
@@ -19,8 +24,8 @@
             <td>{{ classroom.id }}</td>
             <td>{{ classroom.name }}</td>
             <td>
-                <a href="#">Update</a>
-                <a href="#">Delete</a>
+                <a href="{% url 'classbased_classroom_update' classroom.id %}">Update</a>
+                <a href="{% url 'classbased_classroom_delete' classroom.id %}">Delete</a>
             </td>
         </tr>
     {% endfor %}

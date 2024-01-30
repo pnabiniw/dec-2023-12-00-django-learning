@@ -1,0 +1,9 @@
+{% extends 'classbased/base.html' %}
+
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    {{ form }}<br>
+    <button type="submit">Submit</button>
+    </form>
+{% endblock %}
