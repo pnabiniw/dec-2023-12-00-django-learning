@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView, DetailView
 from crud.models import ClassRoom
 from .forms import ClassRoomModelForm
 
@@ -37,3 +37,9 @@ class ClassRoomDeleteView(DeleteView):
     template_name = "classbased/classroom_delete.html"
     queryset = ClassRoom.objects.all()
     success_url = reverse_lazy('classbased_classroom')
+
+
+class ClassRoomDetailView(DetailView):
+    template_name = "classbased/classroom_detail.html"
+    queryset = ClassRoom.objects.all()
+    context_object_name = "classroom"
